@@ -12,10 +12,12 @@ public class ICWars extends AreaGame {
 	public void update(float deltaTime) {
 	  super.update(deltaTime) ; 
     } 
+    
+    
 	@Override
 	public String getTitle() {
 		// TODO Auto-generated method stub
-		String ICWars = null;
+		String ICWars = "ICWars";
 		
 		
 		

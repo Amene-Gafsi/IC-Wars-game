@@ -2,18 +2,18 @@ package ch.epfl.cs107.play.game.icwars.area;
 
 import ch.epfl.cs107.play.game.areagame.Area;
 import ch.epfl.cs107.play.game.icwars.ICWars;
+import ch.epfl.cs107.play.io.FileSystem;
+import ch.epfl.cs107.play.math.DiscreteCoordinates;
+import ch.epfl.cs107.play.window.Window;
 
-public class ICWarsArea extends Area {
+public abstract class ICWarsArea extends Area {
 
+	private ICWarsBehavior behavior;
 	
 	
-	
-	@Override
-	public String getTitle() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+    protected abstract void createArea();
+    
+    
 	@Override
 	public float getCameraScaleFactor() {
 		// TODO Auto-generated method stub
@@ -21,7 +21,21 @@ public class ICWarsArea extends Area {
 	}
 
 	
+	 public abstract DiscreteCoordinates getPlayerSpawnPosition();
+	    
+	    /// Demo2Area implements Playable
 
+	    @Override
+	    public boolean begin(Window window, FileSystem fileSystem) {
+	        if (super.begin(window, fileSystem)) {
+	            // Set the behavior map
+	        	behavior = new ICWarsBehavior(window, getTitle());
+	            setBehavior(behavior);
+	            createArea();
+	            return true;
+	        }
+	        return false;
+	    }
 	
 	
 		

@@ -1,11 +1,18 @@
 package ch.epfl.cs107.play.game.icwars.actor;
 
+import ch.epfl.cs107.play.game.areagame.Area;
 import ch.epfl.cs107.play.game.areagame.actor.Sprite;
+import ch.epfl.cs107.play.math.DiscreteCoordinates;
 
-public class Unit {
+public class Unit extends ICWarsActor{
 
-		 String name ;
-		 int Hp ;
+		 public Unit(Area area, DiscreteCoordinates position, faction faction) {
+		super(area, position, faction);
+		// TODO Auto-generated constructor stub
+	}
+
+		String name ;
+		 public int Hp ;
 		 int maxHp;
 		 int damage;
 		 int rayon;
@@ -49,6 +56,8 @@ public class Unit {
 			 return false;}
 		 
 		 public boolean takeCellSpace() {return true;}
+		 
+		 public boolean canSprite() { return true;}
 		 
 
 		}
