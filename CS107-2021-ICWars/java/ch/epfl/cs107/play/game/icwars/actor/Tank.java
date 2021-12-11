@@ -13,18 +13,18 @@ public class Tank extends Unit {
 	int Hp = 10;
 	int maxHp=10 ;
 	String nomDuSprite ;
-	Sprite sprite;
+
 	
 	public Tank(Area area, DiscreteCoordinates position, faction faction) {
 		super(area, position, faction);
 		// TODO Auto-generated constructor stub
 		
-		if (faction.equals(ch.epfl.cs107.play.game.icwars.actor.ICWarsActor.faction.ennemie)) {
+		if (faction==ICWarsActor.faction.ENNEMY) {
 		nomDuSprite ="icwars/enemyTank"   ;}
-		if (faction.equals(ch.epfl.cs107.play.game.icwars.actor.ICWarsActor.faction.alliée)) {
+		if (faction==ICWarsActor.faction.ALLY) {
 		nomDuSprite ="icwars/friendlyTank"   ;}
 		
-		sprite = new Sprite(nomDuSprite , 1.5f, 1.5f, this , null , new Vector(-0.25f, -0.25f));
+		setSprite ( new Sprite(nomDuSprite , 1.5f, 1.5f, this , null , new Vector(-0.25f, -0.25f)));
 	}
 	
 	public void draw(Canvas canvas) {

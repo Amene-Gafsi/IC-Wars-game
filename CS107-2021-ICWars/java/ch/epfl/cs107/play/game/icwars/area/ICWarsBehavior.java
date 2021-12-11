@@ -89,9 +89,18 @@ public class ICWarsBehavior extends AreaBehavior{
 			@Override
 			protected boolean canEnter(Interactable entity) {
 				// TODO Auto-generated method stub
-				if (!takeCellSpace()) {
-				return false;}
+				
+				for (Interactable element : entities ) {
+					if (element.takeCellSpace()&& entity.takeCellSpace()) {
+						return false;
+					}
+				}
+
 				return true;
+			}
+
+			public ICWarsCellType getType() {
+				return type;
 			}
 			
 			

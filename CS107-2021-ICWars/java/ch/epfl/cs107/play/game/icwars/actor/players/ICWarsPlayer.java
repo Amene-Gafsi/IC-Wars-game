@@ -9,16 +9,21 @@ public class ICWarsPlayer extends ICWarsActor{
 	
 	
     public int hp ;
-    public int nbrUnit; 
-    
-	public ICWarsPlayer(Area area, DiscreteCoordinates position, faction faction, Unit unit, int nbrUnit) {
-		super(area, position, faction);
-		// TODO Auto-generated constructor stub
-		this.nbrUnit= nbrUnit;
 
+    int nbrUnit ;
+    
+	public ICWarsPlayer(Area area, DiscreteCoordinates position, faction faction, Unit... unit) {
+		super(area, position, faction);
+		
+		// TODO Auto-generated constructor stub
+		
+		this.nbrUnit = unit.length;
+
+/////////////////
 	}
 	
-	 public void update(float deltaTime) {
+
+	 public void update(float deltaTime) { ///////////////////////
 		 if ( hp == 0 ) { ;}}
      	 
 	    public void centerCamera() {
@@ -29,13 +34,10 @@ public class ICWarsPlayer extends ICWarsActor{
 		public boolean takeCellSpace() {
 			return false;
 		}
-		
-		public int nbrUnitCount() {
-			return 0;}
-		
+				
 		
 		public boolean lost() {
-			if (nbrUnit == 0) {return true;}
+			if ( nbrUnit == 0) {return true;}
 			return false;
 		}
 		

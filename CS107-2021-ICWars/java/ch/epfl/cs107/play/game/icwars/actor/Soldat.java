@@ -13,17 +13,19 @@ public class Soldat extends Unit {
 	int Hp =5;
 	int maxHp=5;
 	String nomDuSprite ;
-	Sprite sprite ;
+	
+	
+
 	
 	public Soldat(Area area, DiscreteCoordinates position, faction faction) {
 		super(area, position, faction);
 
-		if (faction.equals(ch.epfl.cs107.play.game.icwars.actor.ICWarsActor.faction.ennemie)) {
-		nomDuSprite ="icwars/enemySoldier"   ;}
-		if (faction.equals(ch.epfl.cs107.play.game.icwars.actor.ICWarsActor.faction.alliée)) {
-		nomDuSprite ="icwars/friendlySoldier"   ;}
-		
-		sprite = new Sprite(nomDuSprite , 1.5f, 1.5f, this , null , new Vector(-0.25f, -0.25f));
+		if (faction == ICWarsActor.faction.ENNEMY) {
+			nomDuSprite ="icwars/enemySoldier"   ;}
+			if (faction == ICWarsActor.faction.ALLY) {
+			nomDuSprite ="icwars/friendlySoldier"   ;}
+			
+		setSprite (new Sprite(nomDuSprite , 1.5f, 1.5f, this , null , new Vector(-0.25f, -0.25f)));
 	}
 	
 	public void draw(Canvas canvas) {

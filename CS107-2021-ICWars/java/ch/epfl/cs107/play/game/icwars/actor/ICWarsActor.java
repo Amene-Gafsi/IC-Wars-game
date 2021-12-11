@@ -19,14 +19,13 @@ public class ICWarsActor extends MovableAreaEntity {
 	public ICWarsActor(Area area, DiscreteCoordinates position, faction faction) {
 		super(area, Orientation.UP , position);
 		// TODO Auto-generated constructor stub
-		
+		/////////////
 	}
 	
 	 public enum faction {
-
-		    alliée, ennemie
-		    
-		}
+		    ALLY,
+		    ENNEMY;			 
+	 }
 	 
 	    public void leaveArea(){
 	        getOwnerArea().unregisterActor(this);
@@ -38,6 +37,8 @@ public class ICWarsActor extends MovableAreaEntity {
 	        setCurrentPosition(position.toVector());
 	    }
 
+	    
+	    
 	@Override
 	public List<DiscreteCoordinates> getCurrentCells() {
 		// TODO Auto-generated method stub

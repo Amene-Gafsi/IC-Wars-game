@@ -4,6 +4,7 @@ import ch.epfl.cs107.play.game.areagame.Area;
 import ch.epfl.cs107.play.game.areagame.actor.Sprite;
 import ch.epfl.cs107.play.math.DiscreteCoordinates;
 
+
 public class Unit extends ICWarsActor{
 
 		 public Unit(Area area, DiscreteCoordinates position, faction faction) {
@@ -11,7 +12,7 @@ public class Unit extends ICWarsActor{
 		// TODO Auto-generated constructor stub
 	}
 
-		String name ;
+		 String name ;
 		 public int Hp ;
 		 int maxHp;
 		 int damage;
@@ -57,9 +58,8 @@ public class Unit extends ICWarsActor{
 		 
 		 public boolean takeCellSpace() {return true;}
 		 
-		 public boolean canSprite() { return true;}
-		 
-
-		}
-
+		 public void setSprite(Sprite sprite) {
+			 this.sprite = sprite; 		
+		 }
+}
 

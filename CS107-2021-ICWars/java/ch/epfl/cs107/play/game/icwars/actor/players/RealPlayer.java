@@ -1,6 +1,5 @@
 package ch.epfl.cs107.play.game.icwars.actor.players;
 
-import ch.epfl.cs107.play.game.actor.TextGraphics;
 import ch.epfl.cs107.play.game.areagame.Area;
 import ch.epfl.cs107.play.game.areagame.actor.Orientation;
 import ch.epfl.cs107.play.game.areagame.actor.Sprite;
@@ -10,6 +9,7 @@ import ch.epfl.cs107.play.window.Button;
 import ch.epfl.cs107.play.window.Canvas;
 import ch.epfl.cs107.play.window.Keyboard;
 
+
 public class RealPlayer extends ICWarsPlayer{
 
 
@@ -18,13 +18,13 @@ public class RealPlayer extends ICWarsPlayer{
     String spriteName;
     Sprite sprite;
 	
-	public RealPlayer(Area area, DiscreteCoordinates position, faction faction, Unit unit, int nbrUnit) {
-		super(area, position, faction, unit, nbrUnit);
+	public RealPlayer(Area area, DiscreteCoordinates position, faction faction, Unit... unit) {
+		super(area, position, faction, unit);
 		// TODO Auto-generated constructor stub
 		
-		if (faction.equals(ch.epfl.cs107.play.game.icwars.actor.ICWarsActor.faction.ennemie)) {
+		if (faction== ch.epfl.cs107.play.game.icwars.actor.ICWarsActor.faction.ENNEMY) {
 		spriteName ="icwars/enemyCursor"  ;}
-		if (faction.equals(ch.epfl.cs107.play.game.icwars.actor.ICWarsActor.faction.alliée)) {
+		if (faction==ch.epfl.cs107.play.game.icwars.actor.ICWarsActor.faction.ALLY) {
 		spriteName ="icwars/allyCursor"   ;}
 		
 		
